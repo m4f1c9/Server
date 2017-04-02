@@ -36,6 +36,12 @@ public class ServerReader implements Runnable {
             }
         } catch (IOException ex) {
            JOptionPane.showMessageDialog(MainWindow.getFrame(), "Что-то сломалось с той стороны");
+           synchronized (readTextArea){
+               readTextArea.append("----------------------------------------------");
+               readTextArea.append("Все сломалось");
+               readTextArea.append("----------------------------------------------");
+               readTextArea.append("\n");
+           }
         }
     }
 
